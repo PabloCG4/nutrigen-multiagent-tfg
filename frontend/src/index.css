@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+:root {
+  --color-app-bg: #ffffff;
+  --color-app-text: #000000;
+  /* black */
+  /* teal-700 */
+  --color-surface: #ffffff;
+  --color-white: #ffffff;
+  --color-surface-soft: #f3f4f6;
+  --color-primary: #059669;
+  /* emerald-600 */
+  --color-primary-strong: #047857;
+  /* emerald-700 */
+  --color-secondary: #0284c7;
+  /* sky-600 */
+  --color-secondary-strong: #0369a1;
+  /* sky-700 */
+  --color-heading: #0f766e;
+  /* teal-700 */
+  --color-active-bg: #f0fdfa;
+  /* teal-50-ish */
+  --color-active-border: #14b8a6;
+  /* teal-500 */
+  --color-focus-ring: rgba(2, 132, 199, 0.25);
+  /* sky-600 @ 25% */
+  --color-muted: #0284c7;
+  /* sky-600 */
+  --color-border: #b7b9bda3;
+  --color-border-strong: #d1d5db;
+  --color-protein: #0639a8f6;
+  --color-carbs: #058b22;
+  --color-fat: #e6cf04;
+  /* burned calories / exercise strip — legacy aggregate (magenta), strength (red), cardio (purple) */
+  --color-exercise: #c026d3;
+  --color-exercise-strength: #dc2626;
+  --color-exercise-cardio: #9333ea;
+  /* Slightly darker than surface-soft for native date-picker selection (accent-color; browser-dependent) */
+  --color-surface-soft-strong: #e5e7eb;
+
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-app-bg);
+  color: var(--color-primary);
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+}
+
+/*
+ * Native <input type="date">: the visible field and WebKit datetime edits use app tokens.
+ * The popup calendar is drawn by the browser/OS; accent-color may soften selection tint in some engines.
+ */
+input[type='date'].exercise-date-input {
+  color: #000000;
+  color-scheme: light;
+  accent-color: var(--color-surface-soft-strong);
+}
+
+input[type='date'].exercise-date-input::-webkit-datetime-edit,
+input[type='date'].exercise-date-input::-webkit-datetime-edit-fields-wrapper,
+input[type='date'].exercise-date-input::-webkit-datetime-edit-text,
+input[type='date'].exercise-date-input::-webkit-datetime-edit-month-field,
+input[type='date'].exercise-date-input::-webkit-datetime-edit-day-field,
+input[type='date'].exercise-date-input::-webkit-datetime-edit-year-field {
+  color: #000000;
+}
