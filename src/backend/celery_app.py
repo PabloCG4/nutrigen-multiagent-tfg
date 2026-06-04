@@ -5,7 +5,7 @@ from pathlib import Path
 from dotenv import load_dotenv
 
 # Ensure env vars are available even when imported before FastAPI loads .env
-load_dotenv(Path(__file__).resolve().parent / ".env")
+load_dotenv(Path(__file__).resolve().parent.parent.parent / ".env")
 from celery import Celery
 
 

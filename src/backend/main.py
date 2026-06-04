@@ -30,7 +30,7 @@ from pydantic import BaseModel, ConfigDict, Field, field_validator
 
 # Load environment variables from src/backend/.env as early as possible,
 # before importing celery_app (producer) to avoid missing REDIS_URL/CELERY_*.
-load_dotenv(Path(__file__).resolve().parent / ".env")
+load_dotenv(Path(__file__).resolve().parent.parent.parent / ".env")
 
 from src.backend import config
 from src.backend.allergy_ids import validate_allergies_for_save
